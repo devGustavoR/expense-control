@@ -4,15 +4,19 @@ import { prisma } from '../lib/prisma'
 export async function memories(app: FastifyInstance) {
   app.get('/memories', async () => {
     const memories = await prisma.memory.findMany({
-      o,
+      orderBy: {
+        createdAT: 'asc',
+      },
     })
+
+    return memories
   })
 
-  app.get('/memories/:id', async () => {})
+  // app.get('/memories/:id', async () => {})
 
-  app.post('/memories', async () => {})
+  // app.post('/memories', async () => {})
 
-  app.put('/memories/:id', async () => {})
+  // app.put('/memories/:id', async () => {})
 
-  app.delete('/memories/:id', async () => {})
+  // app.delete('/memories/:id', async () => {})
 }
