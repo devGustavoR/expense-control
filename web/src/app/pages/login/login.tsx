@@ -1,44 +1,65 @@
-import { AiOutlineUser } from "react-icons/ai";
-import { TbPassword } from "react-icons/tb";
+import Image from 'next/image'
+import { AiOutlineUser } from 'react-icons/ai'
+import { TbPassword } from 'react-icons/tb'
+import Finance from './img/Finance.svg'
 
 export function Login() {
   return (
     <>
       <main>
-        <section className="ml-[38%] mt-[12.5%] flex h-96 w-96 flex-1 flex-col items-center justify-center rounded-xl border-2 border-gray-50">
-          <div>
-            <h1 className="flex items-center justify-center font-sans text-lg uppercase tracking-normal">
+        <section className=" flex  flex-1 items-center justify-center rounded-xl">
+          {/* Left */}
+          <Image
+            src={Finance}
+            width={700}
+            height={700}
+            alt="ImageTest"
+            className="pointer-events-none"
+          />
+          {/* Right */}
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="ml-3 flex items-center justify-center font-sans text-xl uppercase tracking-normal">
               Seja Bem-vindos
             </h1>
             <p className="text-center">
-              Onde a economia do seu dinheiro é a nossa alegria
+              Onde a economia do seu{' '}
+              <a className="underline decoration-purple-400">dinheiro</a> é a
+              nossa alegria
             </p>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="mr-2 mt-3 flex items-center justify-center">
-              <AiOutlineUser size="2rem" />
+            <div className="flex items-center justify-center">
+              <div className="mr-2 mt-3 flex items-center justify-center">
+                <AiOutlineUser size="2rem" />
+              </div>
+              <input
+                type="text"
+                className="mt-4 rounded-md border-[2px] border-purple-400 font-monu text-lg text-gray-800 placeholder:text-sm placeholder:text-gray-200/50"
+                placeholder="Usuário/Email"
+              />
             </div>
-            <input
-              type="text"
-              className="mt-4 rounded-xl border-[3px] border-purple-400 text-gray-800 placeholder:text-sm placeholder:text-gray-200/50"
-              placeholder="Usuário/Email"
-            />
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="mr-2 mt-3 flex items-center justify-center">
-              <TbPassword size="2rem" />
+            <div className="flex items-center justify-center">
+              <div className="mr-2 mt-3 flex items-center justify-center">
+                <TbPassword size="2rem" />
+              </div>
+              <input
+                type="password"
+                className="placeholder: mt-4 rounded-md border-[2px]  border-purple-400 text-lg text-gray-800 placeholder:text-sm placeholder:text-gray-200/50"
+                placeholder="Senha"
+              />
             </div>
-            <input
-              type="password"
-              className="mt-4 rounded-xl border-[3px] border-purple-400 text-gray-800 placeholder:text-sm placeholder:text-gray-200/50"
-              placeholder="Senha"
-            />
+            <div>
+              <a
+                href=""
+                className="float-right mt-5 text-sm text-purple-400 hover:text-purple-300"
+              >
+                Esqueceu a senha?
+              </a>
+            </div>
+            <button className="mt-3 rounded-2xl bg-white p-3 text-gray-700 hover:bg-slate-100 hover:text-purple-400">
+              Login
+            </button>
           </div>
-          <button className="mt-3 rounded-2xl bg-white p-3 text-gray-700 hover:bg-gray-100 hover:text-purple-500">
-            Login
-          </button>
         </section>
       </main>
     </>
-  );
+  )
 }

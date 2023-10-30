@@ -82,7 +82,6 @@ const config: Config = {
           900: '#025929',
         },
       },
-
     },
   },
   plugins: [],
